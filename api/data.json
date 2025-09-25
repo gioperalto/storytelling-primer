@@ -1,0 +1,436 @@
+[
+  {
+    "category": "Concept",
+    "hint": "Create a clear, single-sentence summary of your story's core idea.",
+    "title": "The Logline",
+    "subtitle": "Your story in a nutshell.",
+    "description": "A single sentence that summarizes your story, its protagonist, their objective, and the central conflict. A great logline is both a selling tool and a narrative compass."
+  },
+  {
+    "category": "Concept",
+    "hint": "What is the single thing your audience must remember?",
+    "title": "The Takeaway",
+    "subtitle": "The one thing they'll never forget.",
+    "description": "Identify the one key message you want your audience to walk away with. Craft your entire story around reinforcing this single idea."
+  },
+  {
+    "category": "Concept",
+    "hint": "What's the big idea your story supports?",
+    "title": "The Central Theme",
+    "subtitle": "The universal truth at the heart of your tale.",
+    "description": "Explore the universal concept or truth that underpins your narrative. It could be love, betrayal, redemption, or the struggle for power. This gives your story depth and resonance."
+  },
+  {
+    "category": "Concept",
+    "hint": "Identify the core problem you're trying to solve.",
+    "title": "The Why",
+    "subtitle": "The problem that demands a solution.",
+    "description": "Define the central problem or challenge that your story addresses. This 'why' gives your narrative purpose and provides a clear motivation for the actions that follow."
+  },
+  {
+    "category": "Concept",
+    "hint": "What's the main obstacle to success?",
+    "title": "The Conflict",
+    "subtitle": "The struggle that drives the plot.",
+    "description": "Introduce the main struggle that your characters must face. Without conflict, there is no story. This can be internal, external, or a combination of both."
+  },
+  {
+    "category": "Concept",
+    "hint": "What's the one thing that will change everything?",
+    "title": "The Inciting Incident",
+    "subtitle": "The moment that sets the story in motion.",
+    "description": "Pinpoint the event that thrusts the protagonist into the main action of the story. This is the catalyst that changes their ordinary world."
+  },
+  {
+    "category": "Concept",
+    "hint": "Frame your story around a clear, simple moral.",
+    "title": "The Moral of the Story",
+    "subtitle": "The lesson to be learned.",
+    "description": "Create a story that illustrates a clear moral principle. This is a powerful way to make your message resonate and be easily remembered."
+  },
+  {
+    "category": "Concept",
+    "hint": "Distill your story into a short, attention-grabbing pitch.",
+    "title": "The Elevator Pitch",
+    "subtitle": "The ultimate quick sell.",
+    "description": "Condense your entire story into a pitch that can be delivered in 30 seconds or less. This forces you to focus on the most compelling elements."
+  },
+  {
+    "category": "Concept",
+    "hint": "What question does your story pose to the audience?",
+    "title": "The Central Question",
+    "subtitle": "The hook that keeps them listening.",
+    "description": "Pose a question at the beginning of your story that the audience needs answered. This creates curiosity and keeps them engaged until the very end."
+  },
+  {
+    "category": "Explore",
+    "hint": "Think of a story you love and identify its core components.",
+    "title": "Reverse Engineer a Story",
+    "subtitle": "Deconstruct to build your own.",
+    "description": "Choose a story that moves you and break it down into its constituent parts: protagonist, conflict, theme, plot points. This reveals the mechanics behind effective storytelling."
+  },
+  {
+    "category": "Explore",
+    "hint": "Ask 'what if' to generate a crazy idea.",
+    "title": "The 'What If' Generator",
+    "subtitle": "Unleash your imagination.",
+    "description": "Begin your brainstorming with a simple, provocative question: What if... This can lead to unexpected and compelling story premises that you wouldn't have considered otherwise."
+  },
+  {
+    "category": "Explore",
+    "hint": "Create a timeline of key events and see what story emerges.",
+    "title": "The Story Timeline",
+    "subtitle": "Map out the moments.",
+    "description": "Visualize your story by plotting key events on a timeline. This helps you identify the rhythm and pacing of your narrative, ensuring a logical progression."
+  },
+  {
+    "category": "Explore",
+    "hint": "What are the common stories told in your industry?",
+    "title": "Story Archetypes",
+    "subtitle": "Borrow from the past.",
+    "description": "Identify and analyze classic story patterns or 'archetypes' relevant to your field. These patterns are instantly recognizable to audiences and provide a powerful framework."
+  },
+  {
+    "category": "Explore",
+    "hint": "Find the human truth behind the data.",
+    "title": "Data to Narrative",
+    "subtitle": "From numbers to feelings.",
+    "description": "Translate abstract data and statistics into a personal, human story. Find the 'person' or 'people' behind the numbers to make your findings relatable and impactful."
+  },
+  {
+    "category": "Explore",
+    "hint": "Talk to people to discover their true motivations.",
+    "title": "The Deep Interview",
+    "subtitle": "Listen for the hidden story.",
+    "description": "Ask open-ended questions to uncover the personal narratives and emotional truths of a subject. The real story often lies beneath the surface of official statements."
+  },
+  {
+    "category": "Explore",
+    "hint": "Imagine your ideal audience member.",
+    "title": "Audience Persona",
+    "subtitle": "Know who you're talking to.",
+    "description": "Create a detailed profile of your target audience. Knowing their values, fears, and aspirations helps you tailor your story to resonate deeply with them."
+  },
+  {
+    "category": "Explore",
+    "hint": "Combine two unrelated ideas to create something new.",
+    "title": "Story Fusion",
+    "subtitle": "Mix and match.",
+    "description": "Take two completely different concepts, genres, or stories and combine them. The tension and novelty of this combination can spark a fresh, original narrative."
+  },
+  {
+    "category": "Explore",
+    "hint": "Go out into the world and find an unexpected detail.",
+    "title": "Sensory Details",
+    "subtitle": "The sights, sounds, and smells of a story.",
+    "description": "Pay close attention to your surroundings and note specific sensory details. Weave these into your story to make it feel more vivid, authentic, and immersive."
+  },
+  {
+    "category": "Explore",
+    "hint": "What do people say when they’re not trying to impress you?",
+    "title": "The Anecdote",
+    "subtitle": "The short, human story.",
+    "description": "Find a short, personal, and true story that illustrates a point. Anecdotes are highly relatable and can make complex ideas feel approachable."
+  },
+  {
+    "category": "Character",
+    "hint": "Create a character who grows and changes.",
+    "title": "The Protagonist",
+    "subtitle": "The hero of the story.",
+    "description": "Create a central character who undergoes a significant transformation. Their journey of overcoming internal and external challenges is the core of your narrative."
+  },
+  {
+    "category": "Character",
+    "hint": "Give your character a single, simple desire.",
+    "title": "The Want",
+    "subtitle": "What your character desperately needs.",
+    "description": "Equip your protagonist with a clear and compelling desire. This is the driving force behind their actions and a powerful source of audience connection."
+  },
+  {
+    "category": "Character",
+    "hint": "Who or what is standing in their way?",
+    "title": "The Antagonist",
+    "subtitle": "The force of opposition.",
+    "description": "Introduce an opposing force that challenges your protagonist. This antagonist, whether a person or an idea, creates the necessary conflict to propel the story forward."
+  },
+  {
+    "category": "Character",
+    "hint": "What makes them relatable?",
+    "title": "The Flaw",
+    "subtitle": "The imperfection that makes them human.",
+    "description": "Give your character a significant flaw or weakness. This makes them more relatable and makes their eventual triumph more meaningful and earned."
+  },
+  {
+    "category": "Character",
+    "hint": "What's the one thing they'll never tell anyone?",
+    "title": "The Secret",
+    "subtitle": "A hidden truth that changes everything.",
+    "description": "Give your character a secret that, if revealed, would completely alter the story. This creates tension, mystery, and a strong character motivation."
+  },
+  {
+    "category": "Character",
+    "hint": "Create a foil to your main character.",
+    "title": "The Supporting Cast",
+    "subtitle": "The people who help or hinder the journey.",
+    "description": "Build out the characters who support or challenge your protagonist. These characters provide valuable context and highlight different facets of the main character's personality."
+  },
+  {
+    "category": "Character",
+    "hint": "Build a character around a specific personality trait.",
+    "title": "The Archetype",
+    "subtitle": "A universal character model.",
+    "description": "Utilize classic character types that are instantly recognizable to your audience (e.g., the mentor, the trickster, the rebel). This provides a quick and powerful foundation."
+  },
+  {
+    "category": "Character",
+    "hint": "How do they interact with their world?",
+    "title": "The Behavior",
+    "subtitle": "Show, don't just tell.",
+    "description": "Instead of telling your audience what your character is like, show it through their actions, mannerisms, and how they react to events. This makes them feel real."
+  },
+  {
+    "category": "Character",
+    "hint": "Give them a backstory that shapes their choices.",
+    "title": "The Origin Story",
+    "subtitle": "Where they came from.",
+    "description": "Explain how your character became who they are. Their past experiences, successes, and failures inform their present actions and make their journey more believable."
+  },
+  {
+    "category": "Character",
+    "hint": "What's their role in the story?",
+    "title": "The Sidekick",
+    "subtitle": "The faithful companion.",
+    "description": "Create a character who supports the protagonist's journey. They can provide comic relief, a different perspective, or simply be a loyal ally."
+  },
+  {
+    "category": "Function",
+    "hint": "Make your story a clear call to action.",
+    "title": "The Call to Action",
+    "subtitle": "What do you want your audience to do?",
+    "description": "End your story with a clear, concise instruction. Tell your audience exactly what steps to take next. This turns a narrative into a powerful persuasive tool."
+  },
+  {
+    "category": "Function",
+    "hint": "Tell a story to justify a new decision.",
+    "title": "The Justification Story",
+    "subtitle": "Explaining the 'why' behind the what.",
+    "description": "Use a story to explain and defend a decision or change. By showing the journey to the decision, you can build trust and make the rationale clear."
+  },
+  {
+    "category": "Function",
+    "hint": "Use a story to bring a team together.",
+    "title": "The Unifying Narrative",
+    "subtitle": "A story that creates a shared vision.",
+    "description": "Craft a story that defines a team's or company's mission and purpose. It provides a common goal and a shared sense of identity that can inspire and align everyone."
+  },
+  {
+    "category": "Function",
+    "hint": "Use a story to sell a product or idea.",
+    "title": "The Sales Narrative",
+    "subtitle": "The pitch that connects with emotion.",
+    "description": "Instead of just listing features, tell a story about how your product or idea solves a problem and transforms a life. This builds an emotional connection."
+  },
+  {
+    "category": "Function",
+    "hint": "Use a story to teach a lesson or a skill.",
+    "title": "The Teaching Tale",
+    "subtitle": "Learning through narrative.",
+    "description": "Embed a lesson or a how-to guide within a narrative. Stories are a natural way for the brain to process and retain information, making learning effortless."
+  },
+  {
+    "category": "Function",
+    "hint": "What story does your brand tell?",
+    "title": "The Brand Story",
+    "subtitle": "The essence of your identity.",
+    "description": "Create a narrative that defines your brand's values, mission, and personality. It's the story you want your audience to tell about you."
+  },
+  {
+    "category": "Function",
+    "hint": "Tell a story to explain why you're a good fit.",
+    "title": "The Personal Brand Story",
+    "subtitle": "Your story is your advantage.",
+    "description": "Use a personal anecdote to illustrate your skills, values, and experiences. This is often more effective than simply listing accomplishments on a resume."
+  },
+  {
+    "category": "Function",
+    "hint": "Use a story to explain a complex topic.",
+    "title": "The Explanatory Narrative",
+    "subtitle": "Making complexity simple.",
+    "description": "Break down a complex system or idea by turning it into a story with a beginning, middle, and end. This makes abstract concepts relatable and easy to follow."
+  },
+  {
+    "category": "Structure",
+    "hint": "Begin with the outcome and work backward.",
+    "title": "The Reverse Chronology",
+    "subtitle": "Start at the end and explain how you got there.",
+    "description": "Begin your story with the final result or conclusion, then rewind and explain the sequence of events that led to that moment. This is a great way to build suspense."
+  },
+  {
+    "category": "Structure",
+    "hint": "A simple problem, a simple solution.",
+    "title": "The Pitch Structure",
+    "subtitle": "A five-point plan for a clear message.",
+    "description": "Follow this simple structure: 1. Introduce the hero. 2. Define the problem. 3. Propose the solution. 4. Explain the plan. 5. Show the happy ending."
+  },
+  {
+    "category": "Structure",
+    "hint": "Set up a question, answer it, and then move on.",
+    "title": "Question and Answer",
+    "subtitle": "A natural way to guide a narrative.",
+    "description": "Structure your story as a series of questions and answers. Each question you pose builds anticipation, and each answer provides a satisfying moment of clarity."
+  },
+  {
+    "category": "Structure",
+    "hint": "The most common and satisfying structure.",
+    "title": "The Three-Act Structure",
+    "subtitle": "Setup, Confrontation, and Resolution.",
+    "description": "Divide your story into three parts. The first act introduces the world and the conflict. The second is about overcoming challenges. The third resolves the conflict and concludes the narrative."
+  },
+  {
+    "category": "Structure",
+    "hint": "What's the one thing that will change everything?",
+    "title": "The Twist",
+    "subtitle": "The surprise that recontextualizes the past.",
+    "description": "Introduce a shocking revelation at a critical point in the story that forces the audience to rethink everything they thought they knew. This can be a powerful emotional climax."
+  },
+  {
+    "category": "Structure",
+    "hint": "Use a framework to present a process.",
+    "title": "The Process Story",
+    "subtitle": "A step-by-step journey.",
+    "description": "Frame a process or workflow as a story. This makes it easier to understand, remember, and follow, as it has a clear beginning, middle, and end."
+  },
+  {
+    "category": "Structure",
+    "hint": "Compare two seemingly unrelated things.",
+    "title": "The Analogy",
+    "subtitle": "Making the unfamiliar familiar.",
+    "description": "Explain a complex or abstract idea by comparing it to something simple and well-known. This provides an instant shortcut to understanding."
+  },
+  {
+    "category": "Style",
+    "hint": "Use simple, powerful, and evocative language.",
+    "title": "The Rule of Three",
+    "subtitle": "Small numbers are memorable.",
+    "description": "Present ideas in sets of three. This creates a rhythm that is pleasing to the ear and makes the information easier to recall and internalize."
+  },
+  {
+    "category": "Style",
+    "hint": "Use visual language to make your story more vivid.",
+    "title": "Show, Don't Tell",
+    "subtitle": "Draw a picture with words.",
+    "description": "Instead of telling your audience what's happening, use descriptive language to show it. This engages their imagination and makes the experience more immersive."
+  },
+  {
+    "category": "Style",
+    "hint": "Find the voice that best fits your story.",
+    "title": "The Voice",
+    "subtitle": "The personality behind the words.",
+    "description": "Determine the tone and style of your narrative. Is it formal or casual, serious or humorous? A consistent voice helps your story feel authentic."
+  },
+  {
+    "category": "Style",
+    "hint": "Keep your sentences short and impactful.",
+    "title": "The Short Sentence",
+    "subtitle": "Power in brevity.",
+    "description": "Use short sentences to create a sense of urgency, highlight a key point, or provide a dramatic pause. This stylistic choice adds rhythm and impact to your writing."
+  },
+  {
+    "category": "Style",
+    "hint": "What makes your story feel unique?",
+    "title": "The Tone",
+    "subtitle": "The mood and feeling of your narrative.",
+    "description": "Establish the overall mood of your story. The tone can be serious, whimsical, suspenseful, or nostalgic. It shapes how your audience feels as they engage with your narrative."
+  },
+  {
+    "category": "Style",
+    "hint": "Introduce an element that will pay off later.",
+    "title": "The Chekhov's Gun",
+    "subtitle": "Every element must have a purpose.",
+    "description": "A narrative principle that states that every element in a story must be necessary. If you introduce an object or detail, it must be relevant later in the story."
+  },
+  {
+    "category": "Organize",
+    "hint": "What's the goal?",
+    "title": "The Objective",
+    "subtitle": "What are you trying to achieve?",
+    "description": "Before you begin, define the clear objective of your story. This provides a clear destination and ensures every part of the narrative works towards a single purpose."
+  },
+  {
+    "category": "Organize",
+    "hint": "Tell your story in three parts.",
+    "title": "The Three-Point Plan",
+    "subtitle": "Start, middle, and end.",
+    "description": "Every story needs a beginning, a middle, and an end. The beginning introduces the world, the middle explores the conflict, and the end resolves it. Simple, effective, and universal."
+  },
+  {
+    "category": "Organize",
+    "hint": "Cut out everything that isn't essential.",
+    "title": "The Red Pen",
+    "subtitle": "Simplicity is the soul of effectiveness.",
+    "description": "Review your story and ruthlessly remove any unnecessary details, characters, or scenes. A concise story is a powerful one."
+  },
+  {
+    "category": "Organize",
+    "hint": "Find the core message and filter the rest.",
+    "title": "The Filter",
+    "subtitle": "Focus on what matters.",
+    "description": "Identify the core message of your story and use it as a filter. If a scene, character, or detail doesn't support that message, it doesn't belong."
+  },
+  {
+    "category": "Organize",
+    "hint": "A simple, memorable structure for presentations.",
+    "title": "The Pyramid Principle",
+    "subtitle": "Start with the conclusion.",
+    "description": "Begin with your main point or conclusion, then support it with three key arguments. Each argument can then be supported by its own set of details."
+  },
+  {
+    "category": "Organize",
+    "hint": "Map your story to a circular path.",
+    "title": "The Hero's Journey",
+    "subtitle": "The cycle of transformation.",
+    "description": "A classic story structure where a hero leaves their ordinary world, faces challenges, achieves victory, and returns transformed. This provides a satisfying and complete narrative arc."
+  },
+  {
+    "category": "Organize",
+    "hint": "Break down a complex process into a simple story.",
+    "title": "The Process Map",
+    "subtitle": "From start to finish.",
+    "description": "Turn a complex workflow into a story by defining a clear beginning, middle, and end. This makes the process easy to understand and remember."
+  },
+  {
+    "category": "Organize",
+    "hint": "What's the one thing they'll never tell anyone?",
+    "title": "The Story Spine",
+    "subtitle": "A quick outline for a full story.",
+    "description": "A powerful tool for quickly outlining a story: 'Once upon a time... Until one day... And because of that... Until finally...' This ensures a logical flow."
+  },
+  {
+    "category": "Organize",
+    "hint": "Re-order your story for maximum impact.",
+    "title": "The Shuffle",
+    "subtitle": "Find a new perspective.",
+    "description": "If your story isn't working, try rearranging the order of your scenes or plot points. A new sequence can reveal a fresh perspective or create a different emotional journey for the audience."
+  },
+  {
+    "category": "Organize",
+    "hint": "Start your story with the action.",
+    "title": "In Medias Res",
+    "subtitle": "Beginning in the middle of things.",
+    "description": "Start your story in the middle of a pivotal moment. This immediately grabs the audience's attention and creates a desire for context and backstory."
+  },
+  {
+    "category": "Organize",
+    "hint": "How do you want your story to end?",
+    "title": "The Ending",
+    "subtitle": "The final destination.",
+    "description": "Determine your conclusion before you write. Knowing where you're going makes it easier to craft a clear and impactful narrative that leads to a satisfying final point."
+  },
+  {
+    "category": "Organize",
+    "hint": "Bring your team's purpose to life.",
+    "title": "The Brand Story",
+    "subtitle": "The emotional core of your company.",
+    "description": "Tell a compelling narrative about your brand's origins, values, and purpose. This is a powerful way to connect with your audience on a deeper level."
+  }
+]
