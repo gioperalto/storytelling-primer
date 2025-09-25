@@ -1,87 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Storyteller Tactics – Interactive Report</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="icon" href="data:,">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Storyteller Tactics — Interactive Report</title>
+  <link rel="stylesheet" href="./styles.css">
+  <meta name="description" content="Interactive study guide for the Storyteller Tactics report.">
 </head>
 <body>
-  <header class="app-header" role="banner">
-    <div class="title">
-      <h1>Storyteller Tactics – Interactive Report</h1>
-      <p class="subtitle">Summaries, sections, tactics, and search</p>
-    </div>
-    <div class="header-actions">
-      <input id="searchInput" class="search" type="search" placeholder="Search the report…" aria-label="Search the report">
-      <button id="clearSearch" class="btn" title="Clear search">Clear</button>
-      <button id="toggleTheme" class="btn" title="Toggle theme">Theme</button>
-    </div>
+  <div id="progressBar"></div>
+  <header class="site-header">
+    <h1>Storyteller Tactics — Interactive Report</h1>
+    <p class="subtitle">Study guide with TOC, search, and shortcuts.</p>
   </header>
 
-  <main class="layout" role="main">
+  <section class="controls" aria-label="Study controls">
+    <div class="control-group">
+      <label for="searchInput">Search</label>
+      <input id="searchInput" type="search" placeholder="Find terms (⌘/Ctrl+K or /)" autocomplete="off" />
+      <button id="clearSearch" class="secondary" type="button" title="Clear search">Clear</button>
+    </div>
+    <div class="control-group">
+      <label class="checkbox">
+        <input id="summaryToggle" type="checkbox" />
+        <span>Summary-only</span>
+      </label>
+      <button id="expandAll" class="secondary" type="button">Expand all</button>
+    </div>
+    <div class="hints">
+      <span>Shortcuts: [ / ] prev/next heading · K or / focus search · S summary</span>
+    </div>
+  </section>
+
+  <main class="layout">
     <aside class="sidebar" aria-label="Table of contents">
-      <h2>Contents</h2>
-      <nav id="toc"></nav>
-      <div class="meta" id="meta"></div>
+      <h2 class="sidebar-title">Contents</h2>
+      <nav id="toc" class="toc"></nav>
     </aside>
-
-    <section class="content">
-      <nav class="tabs" role="tablist" aria-label="Views">
-        <button class="tab active" data-tab="overview" role="tab" aria-selected="true">Overview</button>
-        <button class="tab" data-tab="sections" role="tab" aria-selected="false">Sections</button>
-        <button class="tab" data-tab="tactics" role="tab" aria-selected="false">Tactics</button>
-        <button class="tab" data-tab="cases" role="tab" aria-selected="false">Case Studies</button>
-        <button class="tab" data-tab="compare" role="tab" aria-selected="false">Compare</button>
-        <button class="tab" data-tab="full" role="tab" aria-selected="false">Full Text</button>
-      </nav>
-
-      <section id="panel-overview" class="panel active" role="tabpanel">
-        <div id="overview"></div>
-      </section>
-
-      <section id="panel-sections" class="panel" role="tabpanel">
-        <div id="sections"></div>
-      </section>
-
-      <section id="panel-tactics" class="panel" role="tabpanel">
-        <div id="tactics"></div>
-      </section>
-
-      <section id="panel-cases" class="panel" role="tabpanel">
-        <div id="cases"></div>
-      </section>
-
-      <section id="panel-compare" class="panel" role="tabpanel">
-        <div id="compare"></div>
-      </section>
-
-      <section id="panel-full" class="panel" role="tabpanel">
-        <div id="full"></div>
-      </section>
-    </section>
+    <article id="content" class="content" aria-label="Report content">
+      <div class="loading">Loading report…</div>
+    </article>
   </main>
 
-  <noscript>
-    This site requires JavaScript to parse and summarize the report.
-  </noscript>
-
-  <footer class="app-footer" role="contentinfo">
-    Built for quick understanding of the provided report. Client-side only, ready for GitHub Pages.
+  <footer class="site-footer">
+    <span>Built for quick comprehension. Works offline after first load.</span>
   </footer>
 
-  <script src="app.js"></script>
-  <script>
-    (function() {
-      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-      const saved = localStorage.getItem('theme');
-      if ((saved === 'dark') || (!saved && prefersDark)) {
-        document.documentElement.dataset.theme = 'dark';
-      }
-    })();
-  </script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.6/dist/purify.min.js"></script>
+  <script src="./app.js"></script>
 </body>
+<style>
+  /* Fallback if CSS fails to load */
+  #progressBar{position:fixed;top:0;left:0;height:3px;background:#6b8afd;width:0;z-index:9999}
+  .loading{font:14px/1.4 system-ui, -apple-system, Segoe UI, Roboto, Arial}
+</style>
 </html>
-
 
