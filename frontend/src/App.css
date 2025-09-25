@@ -56,6 +56,18 @@
   margin-bottom: 1rem;
 }
 
+.button {
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 1rem;
+}
+
 .label-button:hover {
   transform: translateY(-1px);
   box-shadow: 0 4px 8px rgba(238, 90, 82, 0.3);

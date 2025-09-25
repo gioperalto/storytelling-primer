@@ -28,14 +28,14 @@ const App: React.FC = () => {
     "Organize": "purple"
   };
 
-  useEffect(() => {
-    const fetchSample = async () => {
-      setLoading(true);
-      const response = await axios.get(`${API_BASE_URL}/api/sample`);
-      setStoryElements(response.data);
-      setLoading(false);
-    };
+  const fetchSample = async () => {
+    setLoading(true);
+    const response = await axios.get(`${API_BASE_URL}/api/sample`);
+    setStoryElements(response.data);
+    setLoading(false);
+  };
 
+  useEffect(() => {
     fetchSample();
   }, []);
 
@@ -53,6 +53,12 @@ const App: React.FC = () => {
         <h1>Story Telling Primer</h1>
         <p>A random card from each category has been picked for you.</p>
         <p>Can you tell a 5-minute story based on them?</p>
+        <button
+          className="button green"
+          onClick={() => fetchSample()}
+        >
+          Reroll
+        </button>
       </header>
       {loading ? (
         <div className="w-full flex justify-center py-12">
