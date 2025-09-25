@@ -6,6 +6,30 @@
   <title>Storyteller Tactics — Interactive Report</title>
   <link rel="stylesheet" href="./styles.css">
   <meta name="description" content="Interactive study guide for the Storyteller Tactics report.">
+  <script>
+    (function(h,o,u,n,d) {
+      h=h[d]=h[d]||{q:[],onReady:function(c){h.q.push(c)}}
+      d=o.createElement(u);d.async=1;d.src=n
+      n=o.getElementsByTagName(u)[0];n.parentNode.insertBefore(d,n)
+    })(window,document,'script','https://www.datadoghq-browser-agent.com/us1/v6/datadog-rum.js','DD_RUM')
+    window.DD_RUM.onReady(function() {
+      window.DD_RUM.init({
+        clientToken: 'pubc35712d16ff4a7eaa9535d762d3612f4',
+        applicationId: '2462cbeb-da85-4ccc-ace4-321413348b63',
+        // `site` refers to the Datadog site parameter of your organization
+        // see https://docs.datadoghq.com/getting_started/site/
+        site: 'datadoghq.com',
+        service: 'storytelling-tactics',
+        env: 'dev',
+        // Specify a version number to identify the deployed version of your application in Datadog
+        // version: '1.0.0',
+        sessionSampleRate: 100,
+        sessionReplaySampleRate: 20,
+        trackBfcacheViews: true,
+        defaultPrivacyLevel: 'mask-user-input',
+      });
+    })
+  </script>
 </head>
 <body>
   <div id="progressBar"></div>
