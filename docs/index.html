@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Storyteller Tactics – Interactive Report</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:,">
+</head>
+<body>
+  <header class="app-header" role="banner">
+    <div class="title">
+      <h1>Storyteller Tactics – Interactive Report</h1>
+      <p class="subtitle">Summaries, sections, tactics, and search</p>
+    </div>
+    <div class="header-actions">
+      <input id="searchInput" class="search" type="search" placeholder="Search the report…" aria-label="Search the report">
+      <button id="clearSearch" class="btn" title="Clear search">Clear</button>
+      <button id="toggleTheme" class="btn" title="Toggle theme">Theme</button>
+    </div>
+  </header>
+
+  <main class="layout" role="main">
+    <aside class="sidebar" aria-label="Table of contents">
+      <h2>Contents</h2>
+      <nav id="toc"></nav>
+      <div class="meta" id="meta"></div>
+    </aside>
+
+    <section class="content">
+      <nav class="tabs" role="tablist" aria-label="Views">
+        <button class="tab active" data-tab="overview" role="tab" aria-selected="true">Overview</button>
+        <button class="tab" data-tab="sections" role="tab" aria-selected="false">Sections</button>
+        <button class="tab" data-tab="tactics" role="tab" aria-selected="false">Tactics</button>
+        <button class="tab" data-tab="cases" role="tab" aria-selected="false">Case Studies</button>
+        <button class="tab" data-tab="compare" role="tab" aria-selected="false">Compare</button>
+        <button class="tab" data-tab="full" role="tab" aria-selected="false">Full Text</button>
+      </nav>
+
+      <section id="panel-overview" class="panel active" role="tabpanel">
+        <div id="overview"></div>
+      </section>
+
+      <section id="panel-sections" class="panel" role="tabpanel">
+        <div id="sections"></div>
+      </section>
+
+      <section id="panel-tactics" class="panel" role="tabpanel">
+        <div id="tactics"></div>
+      </section>
+
+      <section id="panel-cases" class="panel" role="tabpanel">
+        <div id="cases"></div>
+      </section>
+
+      <section id="panel-compare" class="panel" role="tabpanel">
+        <div id="compare"></div>
+      </section>
+
+      <section id="panel-full" class="panel" role="tabpanel">
+        <div id="full"></div>
+      </section>
+    </section>
+  </main>
+
+  <noscript>
+    This site requires JavaScript to parse and summarize the report.
+  </noscript>
+
+  <footer class="app-footer" role="contentinfo">
+    Built for quick understanding of the provided report. Client-side only, ready for GitHub Pages.
+  </footer>
+
+  <script src="app.js"></script>
+  <script>
+    (function() {
+      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const saved = localStorage.getItem('theme');
+      if ((saved === 'dark') || (!saved && prefersDark)) {
+        document.documentElement.dataset.theme = 'dark';
+      }
+    })();
+  </script>
+</body>
+</html>
+
+
