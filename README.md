@@ -1,4 +1,17 @@
-# Storytelling Tactics
+# Story Telling Primer
+
+Story Telling Primer picks a random card from each of the following categories:
+* Concept
+* Explore
+* Character
+* Function
+* Structure
+* Style
+* Organize
+
+One sample from each category is randomly picked for you. Use this primer to create a 5-minute. And if you're not a fan of your choices, hit "Reroll"
+
+## Storytelling Tactics
 
 The "Storyteller Tactics" framework is a structured, card-based system developed to address a fundamental challenge in modern professional communication: the ineffectiveness of data-heavy, jargon-filled presentations and business conversations.
 
