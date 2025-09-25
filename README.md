@@ -1,5 +1,7 @@
 # Story Telling Primer
 
+![Screenshot of app](img/Demo.png "Story Telling Primer")
+
 Story Telling Primer picks a random card from each of the following categories:
 * Concept
 * Explore
