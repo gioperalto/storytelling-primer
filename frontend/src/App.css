@@ -1,0 +1,358 @@
+.app {
+  min-height: 100vh;
+  background: #34495e;
+  padding: 2rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: white;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.header p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin: 0;
+}
+
+.main {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.elements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.element-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+}
+
+.label-button {
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.label-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(238, 90, 82, 0.3);
+}
+
+.label-button:active {
+  transform: translateY(0);
+}
+
+.value {
+  font-size: 1.1rem;
+  color: #333;
+  font-weight: 500;
+  text-align: center;
+  padding: 0.5rem;
+  background: #f8f9fa;
+  border-radius: 6px;
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease;
+}
+
+.popup {
+  background: white;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  animation: slideIn 0.3s ease;
+}
+
+.popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1.5rem;
+  border-bottom: 1px solid #eee;
+  background: #8e44ad;
+  color: white;
+  border-radius: 12px 12px 0 0;
+}
+
+.popup-header-content {
+  flex: 1;
+  margin-right: 1rem;
+}
+
+.popup-category {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.8rem;
+}
+
+.popup-title {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 0.5rem;
+}
+
+.popup-subtitle {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 400;
+  opacity: 0.9;
+  font-style: italic;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.2s ease;
+}
+
+.close-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.popup-content {
+  padding: 0;
+}
+
+.popup-description {
+  padding: 2rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.popup-description p {
+  color: #333;
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.popup-hint {
+  padding: 1.5rem 2rem 2rem;
+  background: #f8f9fa;
+  border-radius: 0 0 12px 12px;
+}
+
+.popup-hint h4 {
+  margin: 0 0 0.8rem 0;
+  color: #6c757d;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+}
+
+.popup-hint h4:before {
+  content: "💡";
+  margin-right: 0.5rem;
+  font-size: 1rem;
+}
+
+.popup-hint p {
+  color: #495057;
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-style: italic;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .app {
+    padding: 1rem;
+  }
+  
+  .header h1 {
+    font-size: 2rem;
+  }
+  
+  .elements-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .element-card {
+    padding: 1rem;
+  }
+  
+  .popup {
+    width: 95%;
+    margin: 1rem;
+  }
+  
+  .popup-header {
+    padding: 1rem;
+  }
+  
+  .popup-category {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.6rem;
+    margin-bottom: 0.6rem;
+  }
+  
+  .popup-title {
+    font-size: 1.4rem;
+  }
+  
+  .popup-subtitle {
+    font-size: 0.9rem;
+  }
+  
+  .popup-description {
+    padding: 1.5rem;
+  }
+  
+  .popup-description p {
+    font-size: 1rem;
+  }
+  
+  .popup-hint {
+    padding: 1rem 1.5rem 1.5rem;
+  }
+  
+  .popup-hint h4 {
+    font-size: 0.8rem;
+  }
+  
+  .popup-hint p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Helper decorators */
+
+.red {
+  background: #e74c3c;
+}
+
+.label-button.red:hover {
+  background: #c0392b;
+}
+
+.orange {
+  background: #e67e22;
+}
+
+.label-button.orange:hover {
+  background: #d35400;
+}
+
+.blue {
+  background: #3498db;
+}
+
+.label-button.blue:hover {
+  background: #2980b9;
+}
+
+.green {
+  background: #2ecc71;
+}
+
+.label-button.green:hover {
+  background: #27ae60;
+}
+
+.yellow {
+  background: #f1c40f;
+}
+
+.label-button.yellow:hover {
+  background: #f39c12;
+}
+
+.green {
+  background: #2ecc71;
+}
+
+.label-button.green:hover {
+  background: #27ae60;
+}
+
+.pink {
+  background: #fd79a8;
+}
+
+.label-button.pink:hover {
+  background: #e84393;
+}
+
+.purple {
+  background: #9b59b6;
+}
+
+.label-button.purple:hover {
+  background: #8e44ad;
+}
