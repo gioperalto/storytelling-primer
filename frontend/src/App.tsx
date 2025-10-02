@@ -15,6 +15,7 @@ interface StoryElement {
 const App: React.FC = () => {
   const [activePopup, setActivePopup] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
+  const [fullSample, setFullSample] = useState(true);
   const [storyElements, setStoryElements] = useState([] as StoryElement[]);
   const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
@@ -30,7 +31,7 @@ const App: React.FC = () => {
 
   const fetchSample = async () => {
     setLoading(true);
-    const response = await axios.get(`${API_BASE_URL}/api/sample`);
+    const response = await axios.get(`${API_BASE_URL}/api/sample?full=${fullSample}`);
     setStoryElements(response.data);
     setLoading(false);
   };
@@ -38,6 +39,10 @@ const App: React.FC = () => {
   useEffect(() => {
     fetchSample();
   }, []);
+
+  useEffect(() => {
+    fetchSample();
+  }, [fullSample]);
 
   const handleLabelClick = (label: string) => {
     setActivePopup(activePopup === label ? null : label);
@@ -53,6 +58,16 @@ const App: React.FC = () => {
         <h1>Story Telling Primer</h1>
         <p>A random card from each category has been picked for you.</p>
         <p>Can you tell a 5-minute story based on them?</p>
+        <div>
+          <label className="inline-flex items-center cursor-pointer">
+            <input type="checkbox" value="" className="sr-only peer" 
+              checked={fullSample}
+              onChange={() => setFullSample(!fullSample)}
+            />
+            <div className="toggle-button"></div>
+            <span className="toggle-text">{ fullSample ? 'All Categories' : 'Minimist' }</span>
+          </label>
+        </div>
         <button
           className="button green"
           onClick={() => fetchSample()}

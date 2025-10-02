@@ -25,15 +25,20 @@ def get_tactics():
 
 @app.route('/api/sample')
 def get_sample():
+    full = request.args.get('full', 'true').lower() == 'true'
     random_sample = [
         random.choice([card for card in cards_data if card['category'] == 'Concept']),
-        random.choice([card for card in cards_data if card['category'] == 'Explore']),
-        random.choice([card for card in cards_data if card['category'] == 'Character']),
-        random.choice([card for card in cards_data if card['category'] == 'Function']),
         random.choice([card for card in cards_data if card['category'] == 'Structure']),
         random.choice([card for card in cards_data if card['category'] == 'Style']),
-        random.choice([card for card in cards_data if card['category'] == 'Organize'])
     ]
+    
+    if full:
+        random_sample.extend([
+            random.choice([card for card in cards_data if card['category'] == 'Explore']),
+            random.choice([card for card in cards_data if card['category'] == 'Character']),
+            random.choice([card for card in cards_data if card['category'] == 'Function']),
+            random.choice([card for card in cards_data if card['category'] == 'Organize'])
+        ])
 
     return jsonify(random_sample)
 

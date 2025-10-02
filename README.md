@@ -1,37 +1,48 @@
-# Story Telling Primer
+# Storytelling Tactics
+
+An app for exploring the Storyteller Tactics deck and a companion GitHub Pages site for an interactive report.
+
+## What is Storyteller Tactics
+
+Storyteller Tactics is a practical, card‑based system that turns proven narrative patterns into “recipes” for clear, memorable business communication. This app picks a random card from each category (Concept, Explore, Character, Function, Structure, Style, Organize) so you can quickly spark a 5‑minute story. The Pages site under `docs/` renders an interactive report with table of contents, search, keyboard shortcuts, and a summary view.
+
+## Quickstart (Docker Compose)
+
+Prerequisites:
+- Docker 24+ and Docker Compose
+
+Environment:
+1. Create a root `.env` with:
+   - `DD_ENV=dev`
+   - `DD_API_KEY=your_datadog_api_key` (optional)
+2. Create `frontend/.env` with:
+   - `VITE_API_BASE_URL=http://localhost:5000`
+
+Run the stack:
+```bash
+docker compose up -d
+```
+
+What you get:
+- Frontend: http://localhost:3000
+- API: http://localhost:5000
+- Datadog agent: runs as a sidecar if `DD_API_KEY` is set
+
+Useful commands:
+```bash
+# View logs
+docker compose logs -f
+
+# Stop and remove containers
+docker compose down
+```
+
+## GitHub Pages (Interactive Report)
+
+The `docs/` folder contains the static web app that renders `docs/report.md` (with TOC, search, keyboard shortcuts, summary toggle). To publish:
+1. Push to `main`.
+2. In GitHub → Settings → Pages → “Deploy from branch”: `main` / `docs`.
+
+## Screenshot
 
 ![Screenshot of app](img/Demo.png "Story Telling Primer")
-
-Story Telling Primer picks a random card from each of the following categories:
-* Concept
-* Explore
-* Character
-* Function
-* Structure
-* Style
-* Organize
-
-One sample from each category is randomly picked for you. Use this primer to create a 5-minute. And if you're not a fan of your choices, hit "Reroll"
-
-## Storytelling Tactics
-
-The "Storyteller Tactics" framework is a structured, card-based system developed to address a fundamental challenge in modern professional communication: the ineffectiveness of data-heavy, jargon-filled presentations and business conversations.
-
-By providing a curated toolkit of 54 "storytelling recipes" in a tactile, card-deck format, the system offers a step-by-step guide to building powerful stories.
-
-## Prereqs
-1. Docker (needed to run docker containers)
-2. NodeJS (Vite frontend)
-3. Python (Flask backend)
-
-## Setup
-
-1. Populate an `.env` file at the root of your project with:
-    - `DD_ENV` (`dev|prod`)
-    - `DD_API_KEY` (can be obtained from Datadog website)
-2. Populate an `.env` file in the `frontend` project with:
-    - `VITE_API_BASE_URL` (URL to your API)
-
-## Startup
-
-1. `docker compose up -d` (will spin up the frontend, datadog agent sidecar, api server)

@@ -368,3 +368,67 @@
 .label-button.purple:hover {
   background: #8e44ad;
 }
+
+/* Toggle switch (styled like buttons) */
+.inline-flex.items-center.cursor-pointer {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 0.75rem;
+  color: white;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.toggle-button {
+  position: relative;
+  width: 56px;
+  height: 32px;
+  background: #2ecc71; /* default on-state to match green button */
+  border-radius: 999px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.toggle-button::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 26px;
+  height: 26px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease;
+}
+
+/* Off state when input (previous sibling) is unchecked */
+input[type="checkbox"].peer + .toggle-button {
+  background: #95a5a6; /* grey when off */
+}
+
+/* On state when checked */
+input[type="checkbox"].peer:checked + .toggle-button {
+  background: #2ecc71;
+}
+
+/* Move the knob when checked */
+input[type="checkbox"].peer:checked + .toggle-button::after {
+  transform: translateX(24px);
+}
+
+.toggle-text {
+  font-weight: 600;
+  opacity: 0.9;
+}
