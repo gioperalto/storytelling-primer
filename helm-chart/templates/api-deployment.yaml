@@ -1,0 +1,59 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.api.name }}
+  labels:
+    app: {{ .Values.api.name }}
+    tags.datadoghq.com/env: {{ .Values.api.datadog.env | quote }}
+    tags.datadoghq.com/service: {{ .Values.api.datadog.service | quote }}
+    tags.datadoghq.com/version: {{ .Values.global.version | quote }}
+spec:
+  replicas: {{ .Values.api.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ .Values.api.name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.api.name }}
+        tags.datadoghq.com/env: {{ .Values.api.datadog.env | quote }}
+        tags.datadoghq.com/service: {{ .Values.api.datadog.service | quote }}
+        tags.datadoghq.com/version: {{ .Values.global.version | quote }}
+        admission.datadoghq.com/enabled: {{ .Values.api.datadog.enabled | quote }}
+      annotations:
+        admission.datadoghq.com/python-lib.version: {{ .Values.api.datadog.pythonLibVersion | quote }}
+    spec:
+      containers:
+      - name: api
+        image: "{{ .Values.api.image.repository }}:{{ .Values.api.image.tag }}"
+        imagePullPolicy: {{ .Values.api.image.pullPolicy }}
+        ports:
+        - containerPort: {{ .Values.api.service.targetPort }}
+          name: http
+        env:
+        - name: DD_ENV
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.labels['tags.datadoghq.com/env']
+        - name: DD_SERVICE
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.labels['tags.datadoghq.com/service']
+        - name: DD_VERSION
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.labels['tags.datadoghq.com/version']
+        - name: DD_AGENT_HOST
+          valueFrom:
+            fieldRef:
+              fieldPath: status.hostIP
+        - name: DD_LOGS_INJECTION
+          value: {{ .Values.api.datadog.logsInjection | quote }}
+        - name: DD_RUNTIME_METRICS_ENABLED
+          value: {{ .Values.api.datadog.runtimeMetricsEnabled | quote }}
+        - name: DD_PROFILING_ENABLED
+          value: {{ .Values.api.datadog.profilingEnabled | quote }}
+        - name: DD_TRACE_ANALYTICS_ENABLED
+          value: {{ .Values.api.datadog.traceAnalyticsEnabled | quote }}
+        resources:
+          {{- toYaml .Values.api.resources | nindent 10 }}

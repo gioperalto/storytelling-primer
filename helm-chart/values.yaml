@@ -1,0 +1,62 @@
+# Default values for storytelling-primer
+global:
+  projectId: YOUR_PROJECT_ID
+  environment: production
+  version: "1.0.0"
+
+# API configuration
+api:
+  name: storytelling-primer-api
+  replicaCount: 2
+  image:
+    repository: gcr.io/YOUR_PROJECT_ID/storytelling-primer-api
+    tag: latest
+    pullPolicy: IfNotPresent
+  service:
+    type: ClusterIP
+    port: 5000
+    targetPort: 5000
+  resources:
+    requests:
+      memory: "256Mi"
+      cpu: "250m"
+    limits:
+      memory: "512Mi"
+      cpu: "500m"
+  datadog:
+    enabled: true
+    env: production
+    service: storytelling-primer-api
+    pythonLibVersion: latest
+    logsInjection: "true"
+    runtimeMetricsEnabled: "true"
+    profilingEnabled: "true"
+    traceAnalyticsEnabled: "true"
+
+# Frontend configuration
+frontend:
+  name: storytelling-primer-frontend
+  replicaCount: 2
+  image:
+    repository: gcr.io/YOUR_PROJECT_ID/storytelling-primer-frontend
+    tag: latest
+    pullPolicy: IfNotPresent
+  service:
+    type: LoadBalancer
+    port: 80
+    targetPort: 80
+  resources:
+    requests:
+      memory: "128Mi"
+      cpu: "100m"
+    limits:
+      memory: "256Mi"
+      cpu: "200m"
+  datadog:
+    enabled: true
+    env: production
+    service: storytelling-primer-frontend
+    jsLibVersion: latest
+    logsInjection: "true"
+    runtimeMetricsEnabled: "true"
+    traceAnalyticsEnabled: "true"

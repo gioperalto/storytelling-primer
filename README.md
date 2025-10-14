@@ -1,6 +1,6 @@
-# Storytelling Tactics
+# Storytelling Primer
 
-An app for exploring the Storyteller Tactics deck and a companion GitHub Pages site for an interactive report.
+An app that uses the Storyteller Tactics deck to help refine your improvisation skills by drawing random cards for you to base stories upon.
 
 ## What is Storyteller Tactics
 
