@@ -32,12 +32,12 @@ ENV GOOGLE_APPLICATION_CREDENTIALS=/opt/service-account.json
 
 ENV DD_API_KEY="YOUR_DATADOG_API_KEY"
 ENV DD_SITE="datadoghq.com"
-ENV DD_SERVICE="storytelling-tactics-api"
+ENV DD_SERVICE="storytelling-primer-api"
 ENV DD_ENV="dev"
 ENV DD_VERSION="1.0.0"
 ENV DD_LLMOBS_ENABLED=1
 ENV DD_LLMOBS_AGENTLESS_ENABLED=1
-ENV DD_LLMOBS_ML_APP="storytelling-tactics-api"
+ENV DD_LLMOBS_ML_APP="storytelling-primer-api"
 
 # Copy requirements file first for better caching
 COPY api/requirements.txt .

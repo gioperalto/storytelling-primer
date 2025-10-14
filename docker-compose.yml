@@ -43,8 +43,8 @@ services:
     security_opt:
       - apparmor:unconfined
 
-  storytelling-tactics-api:
-    container_name: storytelling-tactics-api
+  storytelling-primer-api:
+    container_name: storytelling-primer-api
     build:
       context: ./
       dockerfile: ./api/Dockerfile
@@ -56,7 +56,7 @@ services:
       - DD_AGENT_HOST=dd-agent
       - DD_API_KEY=${DD_API_KEY}
       - DD_ENV=${DD_ENV}
-      - DD_SERVICE=storytelling-tactics-api
+      - DD_SERVICE=storytelling-primer-api
       - DD_VERSION=1.0.0
       - DD_SOURCE=python
       - DD_SITE=datadoghq.com
@@ -65,12 +65,12 @@ services:
       - DD_LOGS_INJECTION=true
       - DD_PROFILING_ENABLED=true
     labels:
-      com.datadoghq.ad.logs: '[{"source": "python", "service": "storytelling-tactics-api"}]'
+      com.datadoghq.ad.logs: '[{"source": "python", "service": "storytelling-primer-api"}]'
     depends_on:
       - dd-agent
 
-  storytelling-tactics-frontend:
-    container_name: storytelling-tactics-frontend
+  storytelling-primer-frontend:
+    container_name: storytelling-primer-frontend
     build:
       context: ./
       dockerfile: ./frontend/Dockerfile
@@ -80,7 +80,7 @@ services:
       - DD_AGENT_HOST=dd-agent
       - DD_API_KEY=${DD_API_KEY}
       - DD_ENV=${DD_ENV}
-      - DD_SERVICE=storytelling-tactics-frontend
+      - DD_SERVICE=storytelling-primer-frontend
       - DD_VERSION=1.0.0
       - DD_SOURCE=javascript
       - DD_SITE=datadoghq.com
@@ -89,7 +89,7 @@ services:
       - DD_LOGS_INJECTION=true
       - DD_PROFILING_ENABLED=true
     labels:
-      com.datadoghq.ad.logs: '[{"source": "javascript", "service": "storytelling-tactics-frontend"}]'
+      com.datadoghq.ad.logs: '[{"source": "javascript", "service": "storytelling-primer-frontend"}]'
     depends_on:
       - dd-agent
-      - storytelling-tactics-api
+      - storytelling-primer-api
