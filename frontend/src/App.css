@@ -609,6 +609,91 @@ textarea.form-input {
   padding: 1.5rem;
 }
 
+/* Container utilities */
+.container-form {
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+/* Spacing utilities */
+.space-y-6 > * + * {
+  margin-top: 1.5rem;
+}
+
+/* Text utilities */
+.text-sm {
+  font-size: 0.875rem;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.whitespace-pre-wrap {
+  white-space: pre-wrap;
+}
+
+/* Layout utilities */
+.justify-center {
+  justify-content: center;
+}
+
+.py-12 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+/* Alert boxes */
+.alert-error {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: #fee2e2;
+  border: 1px solid #ef4444;
+  color: #991b1b;
+  border-radius: 8px;
+}
+
+.alert-success {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  background: #f0fdf4;
+  border: 1px solid #86efac;
+  border-radius: 8px;
+}
+
+/* Spinner animation */
+.spinner {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  border-top-color: #3498db;
+  border-bottom-color: #3498db;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
 /* Responsive improvements */
 @media (max-width: 768px) {
   .home-container {
@@ -626,5 +711,9 @@ textarea.form-input {
 
   .home-card-description {
     font-size: 1rem;
+  }
+
+  .container-form {
+    padding: 1rem;
   }
 }

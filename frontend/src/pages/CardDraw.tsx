@@ -85,8 +85,8 @@ const CardDraw: React.FC = () => {
         </div>
       </header>
       {loading ? (
-        <div className="w-full flex justify-center py-12">
-          <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
+        <div className="loading-container">
+          <div className="spinner"></div>
         </div>
       ) :
       <main className="main">
