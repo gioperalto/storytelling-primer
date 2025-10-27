@@ -31,6 +31,7 @@ ENV PATH=/usr/local/gcloud/google-cloud-sdk/bin:${PATH}
 ENV GOOGLE_APPLICATION_CREDENTIALS=/opt/service-account.json
 
 ENV DD_API_KEY="YOUR_DATADOG_API_KEY"
+ENV ANTHROPIC_API_KEY="YOUR_ANTHROPIC_API_KEY"
 ENV DD_SITE="datadoghq.com"
 ENV DD_SERVICE="storytelling-primer-api"
 ENV DD_ENV="dev"
