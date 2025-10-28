@@ -69,18 +69,18 @@ const CardDraw: React.FC = () => {
             <span className="toggle-text">{ fullSample ? 'All Categories' : 'Minimist' }</span>
           </label>
         </div>
-        <div className="flex gap-4">
-          <button
-            className="button green"
-            onClick={() => fetchSample()}
-          >
-            Reroll
-          </button>
+        <div className="inline-flex items-center">
           <button
             className="button purple"
             onClick={() => navigate('/')}
           >
             Back to Home
+          </button>
+          <button
+            className="button green"
+            onClick={() => fetchSample()}
+          >
+            Reroll
           </button>
         </div>
       </header>

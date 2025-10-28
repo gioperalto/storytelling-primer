@@ -7,7 +7,7 @@ const HomePage: React.FC = () => {
   return (
     <div className="app">
       <header className="header">
-        <h1>Story Telling Primer</h1>
+        <h1>Storytelling Primer</h1>
         <p>Choose how you want to craft your story</p>
       </header>
 

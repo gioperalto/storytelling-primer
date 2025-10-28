@@ -69,7 +69,7 @@ const StoryStructure: React.FC = () => {
       // Filter out empty takeaways
       const filteredTakeaways = formData.keyTakeaways.filter(t => t.trim() !== '');
 
-      const response = await axios.post(`${API_BASE_URL}/api/story-structure`, {
+      const response = await axios.post(`${API_BASE_URL}/api/tactics/structure/suggest`, {
         ...formData,
         keyTakeaways: filteredTakeaways
       });
@@ -98,7 +98,7 @@ const StoryStructure: React.FC = () => {
 
       <main className="main">
         <div className="container-form">
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form onSubmit={handleSubmit}>
             <div className="form-group">
               <label htmlFor="talkTitle" className="form-label">
                 Talk Title *
@@ -115,41 +115,41 @@ const StoryStructure: React.FC = () => {
               />
             </div>
 
-            <div className="form-group">
-              <label htmlFor="audienceDescription" className="form-label">
-                Target Audience *
-              </label>
-              <textarea
-                id="audienceDescription"
-                name="audienceDescription"
-                value={formData.audienceDescription}
-                onChange={handleInputChange}
-                required
-                rows={3}
-                className="form-input"
-                placeholder="Describe your target audience"
-              />
-            </div>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+              <div className="form-group">
+                <label htmlFor="audienceDescription" className="form-label">
+                  Target Audience
+                </label>
+                <textarea
+                  id="audienceDescription"
+                  name="audienceDescription"
+                  value={formData.audienceDescription}
+                  onChange={handleInputChange}
+                  rows={3}
+                  className="form-input"
+                  placeholder="Describe your target audience"
+                />
+              </div>
 
-            <div className="form-group">
-              <label htmlFor="audienceProblem" className="form-label">
-                Challenge *
-              </label>
-              <textarea
-                id="audienceProblem"
-                name="audienceProblem"
-                value={formData.audienceProblem}
-                onChange={handleInputChange}
-                required
-                rows={3}
-                className="form-input"
-                placeholder="What challenge does your audience face?"
-              />
+              <div className="form-group">
+                <label htmlFor="audienceProblem" className="form-label">
+                  Challenge
+                </label>
+                <textarea
+                  id="audienceProblem"
+                  name="audienceProblem"
+                  value={formData.audienceProblem}
+                  onChange={handleInputChange}
+                  rows={3}
+                  className="form-input"
+                  placeholder="What challenge does your audience face?"
+                />
+              </div>
             </div>
 
             <div className="form-group">
               <label htmlFor="shareableHeadline" className="form-label">
-                Shareable Headline *
+                Shareable Headline
               </label>
               <input
                 type="text"
@@ -157,7 +157,6 @@ const StoryStructure: React.FC = () => {
                 name="shareableHeadline"
                 value={formData.shareableHeadline}
                 onChange={handleInputChange}
-                required
                 className="form-input"
                 placeholder="A compelling headline for your talk"
               />
@@ -165,33 +164,34 @@ const StoryStructure: React.FC = () => {
 
             <div className="form-group">
               <label className="form-label">
-                Key Takeaways *
+                Key Takeaways
               </label>
-              {formData.keyTakeaways.map((takeaway, index) => (
-                <div key={index} className="flex gap-2 mb-2">
-                  <input
-                    type="text"
-                    value={takeaway}
-                    onChange={(e) => handleTakeawayChange(index, e.target.value)}
-                    required
-                    className="form-input flex-1"
-                    placeholder={`Takeaway ${index + 1}`}
-                  />
-                  {formData.keyTakeaways.length > 1 && (
-                    <button
-                      type="button"
-                      onClick={() => removeTakeaway(index)}
-                      className="button red"
-                    >
-                      Remove
-                    </button>
-                  )}
-                </div>
-              ))}
+              <div className="takeaways-list">
+                {formData.keyTakeaways.map((takeaway, index) => (
+                  <div key={index} className="takeaway-item">
+                    <input
+                      type="text"
+                      value={takeaway}
+                      onChange={(e) => handleTakeawayChange(index, e.target.value)}
+                      className="form-input"
+                      placeholder={`Takeaway ${index + 1}`}
+                    />
+                    {formData.keyTakeaways.length > 1 && (
+                      <button
+                        type="button"
+                        onClick={() => removeTakeaway(index)}
+                        className="button red"
+                      >
+                        Remove
+                      </button>
+                    )}
+                  </div>
+                ))}
+              </div>
               <button
                 type="button"
                 onClick={addTakeaway}
-                className="button blue mt-2"
+                className="button blue"
               >
                 Add Takeaway
               </button>
@@ -200,9 +200,9 @@ const StoryStructure: React.FC = () => {
             <button
               type="submit"
               disabled={loading}
-              className="button green w-full"
+              className="button green submit-button"
             >
-              {loading ? 'Generating...' : 'Generate Story Structure'}
+              {loading ? 'Generating...' : 'Suggest Story Structures'}
             </button>
           </form>
 
@@ -214,8 +214,8 @@ const StoryStructure: React.FC = () => {
 
           {result && (
             <div className="alert-success">
-              <h2 className="text-2xl font-bold mb-4">Story Structure Suggestions</h2>
-              <pre className="whitespace-pre-wrap text-sm">
+              <h2>Story Structure Suggestions</h2>
+              <pre>
                 {JSON.stringify(result, null, 2)}
               </pre>
             </div>
