@@ -1,0 +1,31 @@
+# GCP Project Configuration
+project_id = "your-gcp-project-id"
+region     = "us-central1"
+
+# Service Configuration
+service_name                 = "storytelling-primer-api"
+frontend_service_name        = "storytelling-primer-frontend"
+artifact_registry_repository = "storytelling-primer"
+image_tag                    = "latest"
+
+# API Keys (Use environment variables or Secret Manager in production)
+anthropic_api_key = "your-anthropic-api-key"
+
+# API Resource Limits
+cpu_limit    = "1"
+memory_limit = "512Mi"
+
+# API Scaling Configuration
+min_instances = 0
+max_instances = 10
+
+# Frontend Resource Limits
+frontend_cpu_limit    = "1"
+frontend_memory_limit = "256Mi"
+
+# Frontend Scaling Configuration
+frontend_min_instances = 0
+frontend_max_instances = 10
+
+# Access Control
+allow_unauthenticated = true

@@ -1,6 +1,0 @@
-apiVersion: v2
-name: storytelling-primer
-description: A Helm chart for Storytelling Primer application
-type: application
-version: 1.0.0
-appVersion: "1.0.0"

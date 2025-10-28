@@ -1,5 +1,5 @@
 # Use Python 3.10 as the base image
-FROM python:3.10-slim
+FROM --platform=linux/amd64 python:3.10-slim
 
 # Set working directory in the container
 WORKDIR /app
@@ -12,24 +12,6 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
     FLASK_APP=app.py \
     FLASK_ENV=production
 
-# Install system dependencies (curl and wget for Google Cloud SDK installation)
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    gcc curl wget \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
-
-# Google Cloud SDK installation
-RUN mkdir -p /usr/local/gcloud && \
-curl -sS -o /tmp/google-cloud-sdk.tar.gz https://dl.google.com/dl/cloudsdk/release/google-cloud-sdk.tar.gz && \
-tar -C /usr/local/gcloud -xvf /tmp/google-cloud-sdk.tar.gz && \
-/usr/local/gcloud/google-cloud-sdk/install.sh --quiet
-
-# Add gcloud to the PATH (optional, but recommended)
-ENV PATH=/usr/local/gcloud/google-cloud-sdk/bin:${PATH}
-
-#  Set env variable for Google Cloud credentials
-ENV GOOGLE_APPLICATION_CREDENTIALS=/opt/service-account.json
-
 ENV DD_API_KEY="YOUR_DATADOG_API_KEY"
 ENV ANTHROPIC_API_KEY="YOUR_ANTHROPIC_API_KEY"
 ENV DD_SITE="datadoghq.com"
@@ -39,6 +21,7 @@ ENV DD_VERSION="1.0.0"
 ENV DD_LLMOBS_ENABLED=1
 ENV DD_LLMOBS_AGENTLESS_ENABLED=1
 ENV DD_LLMOBS_ML_APP="storytelling-primer-api"
+ENV API_PORT=5000
 
 # Copy requirements file first for better caching
 COPY api/requirements.txt .
@@ -50,7 +33,10 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY api .
 
 # Expose port that Flask will run on
-EXPOSE 5000
+EXPOSE ${API_PORT}
 
 # Command to run the application
-CMD ["ddtrace-run", "gunicorn", "--bind", "0.0.0.0:5000", "app:app", "--log-file", "-", "--access-logfile", "-"]
+# Use PORT environment variable provided by Cloud Run, default to 5000 for local development
+# Note: 'sh -c' is required here to allow environment variable expansion for PORT.
+# This can make debugging harder, but is necessary for dynamic port assignment.
+CMD sh -c "ddtrace-run gunicorn --bind 0.0.0.0:\${API_PORT:-5000} app:app --log-file - --access-logfile -"
