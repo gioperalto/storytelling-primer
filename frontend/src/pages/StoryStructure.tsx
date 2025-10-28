@@ -83,144 +83,233 @@ const StoryStructure: React.FC = () => {
     }
   };
 
+  const handleTryAgain = () => {
+    setResult(null);
+    setError(null);
+  };
+
   return (
     <div className="app">
       <header className="header">
         <h1>Story Structure Generator</h1>
         <p>Get AI-powered story structure suggestions for your talk</p>
-        <button
-          className="button purple"
-          onClick={() => navigate('/')}
-        >
-          Back to Home
-        </button>
+        <div className="inline-flex items-center">
+          <button
+            className="button purple"
+            onClick={() => navigate('/')}
+          >
+            Back to Home
+          </button>
+          {result && (
+            <button
+              className="button green"
+              onClick={handleTryAgain}
+            >
+              Try Again
+            </button>
+          )}
+        </div>
       </header>
 
       <main className="main">
-        <div className="container-form">
-          <form onSubmit={handleSubmit}>
-            <div className="form-group">
-              <label htmlFor="talkTitle" className="form-label">
-                Talk Title *
-              </label>
-              <input
-                type="text"
-                id="talkTitle"
-                name="talkTitle"
-                value={formData.talkTitle}
-                onChange={handleInputChange}
-                required
-                className="form-input"
-                placeholder="Enter your talk title"
-              />
-            </div>
-
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+        {loading ? (
+          <div className="loading-container">
+            <div className="spinner"></div>
+          </div>
+        ) : !result ? (
+          <div className="container-form">
+            <form onSubmit={handleSubmit}>
               <div className="form-group">
-                <label htmlFor="audienceDescription" className="form-label">
-                  Target Audience
+                <label htmlFor="talkTitle" className="form-label">
+                  Talk Title *
                 </label>
-                <textarea
-                  id="audienceDescription"
-                  name="audienceDescription"
-                  value={formData.audienceDescription}
+                <input
+                  type="text"
+                  id="talkTitle"
+                  name="talkTitle"
+                  value={formData.talkTitle}
                   onChange={handleInputChange}
-                  rows={3}
+                  required
                   className="form-input"
-                  placeholder="Describe your target audience"
+                  placeholder="Enter your talk title"
+                />
+              </div>
+
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                <div className="form-group">
+                  <label htmlFor="audienceDescription" className="form-label">
+                    Target Audience
+                  </label>
+                  <textarea
+                    id="audienceDescription"
+                    name="audienceDescription"
+                    value={formData.audienceDescription}
+                    onChange={handleInputChange}
+                    rows={3}
+                    className="form-input"
+                    placeholder="Describe your target audience"
+                  />
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="audienceProblem" className="form-label">
+                    Challenge
+                  </label>
+                  <textarea
+                    id="audienceProblem"
+                    name="audienceProblem"
+                    value={formData.audienceProblem}
+                    onChange={handleInputChange}
+                    rows={3}
+                    className="form-input"
+                    placeholder="What challenge does your audience face?"
+                  />
+                </div>
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="shareableHeadline" className="form-label">
+                  Shareable Headline
+                </label>
+                <input
+                  type="text"
+                  id="shareableHeadline"
+                  name="shareableHeadline"
+                  value={formData.shareableHeadline}
+                  onChange={handleInputChange}
+                  className="form-input"
+                  placeholder="A compelling headline for your talk"
                 />
               </div>
 
               <div className="form-group">
-                <label htmlFor="audienceProblem" className="form-label">
-                  Challenge
+                <label className="form-label">
+                  Key Takeaways
                 </label>
-                <textarea
-                  id="audienceProblem"
-                  name="audienceProblem"
-                  value={formData.audienceProblem}
-                  onChange={handleInputChange}
-                  rows={3}
-                  className="form-input"
-                  placeholder="What challenge does your audience face?"
-                />
+                <div className="takeaways-list">
+                  {formData.keyTakeaways.map((takeaway, index) => (
+                    <div key={index} className="takeaway-item">
+                      <input
+                        type="text"
+                        value={takeaway}
+                        onChange={(e) => handleTakeawayChange(index, e.target.value)}
+                        className="form-input"
+                        placeholder={`Takeaway ${index + 1}`}
+                      />
+                      {formData.keyTakeaways.length > 1 && (
+                        <button
+                          type="button"
+                          onClick={() => removeTakeaway(index)}
+                          className="button red"
+                        >
+                          Remove
+                        </button>
+                      )}
+                    </div>
+                  ))}
+                </div>
+                <button
+                  type="button"
+                  onClick={addTakeaway}
+                  className="button blue"
+                >
+                  Add Takeaway
+                </button>
               </div>
-            </div>
 
-            <div className="form-group">
-              <label htmlFor="shareableHeadline" className="form-label">
-                Shareable Headline
-              </label>
-              <input
-                type="text"
-                id="shareableHeadline"
-                name="shareableHeadline"
-                value={formData.shareableHeadline}
-                onChange={handleInputChange}
-                className="form-input"
-                placeholder="A compelling headline for your talk"
-              />
-            </div>
-
-            <div className="form-group">
-              <label className="form-label">
-                Key Takeaways
-              </label>
-              <div className="takeaways-list">
-                {formData.keyTakeaways.map((takeaway, index) => (
-                  <div key={index} className="takeaway-item">
-                    <input
-                      type="text"
-                      value={takeaway}
-                      onChange={(e) => handleTakeawayChange(index, e.target.value)}
-                      className="form-input"
-                      placeholder={`Takeaway ${index + 1}`}
-                    />
-                    {formData.keyTakeaways.length > 1 && (
-                      <button
-                        type="button"
-                        onClick={() => removeTakeaway(index)}
-                        className="button red"
-                      >
-                        Remove
-                      </button>
-                    )}
-                  </div>
-                ))}
-              </div>
               <button
-                type="button"
-                onClick={addTakeaway}
-                className="button blue"
+                type="submit"
+                disabled={loading}
+                className="button green submit-button"
               >
-                Add Takeaway
+                {loading ? 'Generating...' : 'Suggest Story Structures'}
               </button>
-            </div>
+            </form>
 
-            <button
-              type="submit"
-              disabled={loading}
-              className="button green submit-button"
-            >
-              {loading ? 'Generating...' : 'Suggest Story Structures'}
-            </button>
-          </form>
-
-          {error && (
-            <div className="alert-error">
-              <strong>Error:</strong> {error}
-            </div>
-          )}
-
-          {result && (
-            <div className="alert-success">
-              <h2>Story Structure Suggestions</h2>
-              <pre>
-                {JSON.stringify(result, null, 2)}
-              </pre>
-            </div>
-          )}
-        </div>
+            {error && (
+              <div className="alert-error">
+                <strong>Error:</strong> {error}
+              </div>
+            )}
+          </div>
+        ) : (
+          <div className="elements-grid">
+            {result.map((structure: any, index: number) => (
+              <div key={structure.title} className="element-card">
+                <div className="label-button blue" style={{ cursor: 'default', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                  <span>Recommendation {index + 1}</span>
+                  <span style={{
+                    fontSize: '1.5rem',
+                    fontWeight: 'bold',
+                    background: 'rgba(255, 255, 255, 0.3)',
+                    width: '2.5rem',
+                    height: '2.5rem',
+                    borderRadius: '50%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center'
+                  }}>
+                    {index + 1}
+                  </span>
+                </div>
+                <div className="value" style={{ fontSize: '1.3rem', fontWeight: '600', padding: '1rem' }}>
+                  {structure.title}
+                </div>
+                {structure.subtitle && (
+                  <div style={{
+                    fontSize: '0.95rem',
+                    color: '#666',
+                    fontStyle: 'italic',
+                    padding: '0.5rem 1rem',
+                    textAlign: 'center',
+                    borderTop: '1px solid #e0e0e0',
+                    marginTop: '0.5rem'
+                  }}>
+                    {structure.subtitle}
+                  </div>
+                )}
+                <div style={{
+                  padding: '1.5rem 1rem',
+                  fontSize: '1rem',
+                  color: '#555',
+                  lineHeight: '1.6',
+                  borderTop: '1px solid #e0e0e0',
+                  marginTop: '1rem'
+                }}>
+                  {structure.description}
+                </div>
+                {structure.hint && (
+                  <div style={{
+                    padding: '1rem',
+                    background: '#f8f9fa',
+                    borderRadius: '0 0 12px 12px',
+                    marginTop: '1rem',
+                    borderTop: '2px solid #e0e0e0'
+                  }}>
+                    <div style={{
+                      fontSize: '0.85rem',
+                      fontWeight: '600',
+                      color: '#6c757d',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.5px',
+                      marginBottom: '0.5rem'
+                    }}>
+                      💡 Hint
+                    </div>
+                    <div style={{
+                      fontSize: '0.95rem',
+                      color: '#495057',
+                      fontStyle: 'italic',
+                      lineHeight: '1.5'
+                    }}>
+                      {structure.hint}
+                    </div>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        )}
       </main>
     </div>
   );
